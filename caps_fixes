@@ -1,0 +1,14 @@
+setxkbmap -option caps:swapescape
+
+xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+
+https://lars.ingebrigtsen.no/2024/04/28/the-simplest-thing-in-the-world-modifing-keymaps-in-wayland/
+
+# udev hwdb rule
+services.udev.extraHwdb = ''
+  evdev:atkbd:*
+    KEYBOARD_KEY_3a=esc
+'';
+
+
+

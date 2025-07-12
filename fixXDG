@@ -1,0 +1,2 @@
+# might help with X11 forwarding
+unset XDG_RUNTIME_DIR
