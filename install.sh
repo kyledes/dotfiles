@@ -9,6 +9,7 @@ function installSoftware(){
     sudo apt install kitty -y
     sudo apt install shpotify -y
     sudo apt install ripgrep -y
+}
 
 function cloneDotfiles() {
 
@@ -18,23 +19,7 @@ function cloneDotfiles() {
 
     cd ~/
 
-    git clone https://github.com//dotfiles.git
-
-    # Create secret keys file - used to store local env vars
-    touch ~/dotfile/secret-keys.sh
-
-    # Create secret functions file - used to store device specific functions
-    touch ~/dotfile/secret-functions.sh
-
-    # Create aliases script file to store zsh aliases
-    touch ~/dotfiles/aliases.sh
-
-    # Clone gruvbox community fork and symlink it
-    git clone https://github.com/gruvbox-community/gruvbox.git ~/personal/gruvbox-community
-    ln -sf ~/personal/gruvbox-community/colors/gruvbox.vim ~/dotfiles/vim_colors/gruvbox.vim
-
-    # Clone zsh syntax highlighting dir
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    git clone https://github.com/kyledes/dotfiles.git
 
 }
 
@@ -44,7 +29,8 @@ function setupNvim() {
     echo "==================================="    
 
     cd ~/
-    mkdir -p ~/.config/nvim
+
+    ln -sf ~/dotfiles/nvim ~/.config/nvim
 
 }
 
@@ -56,7 +42,6 @@ function setupTmux() {
 
     cd ~/
 
-    touch ~/.tmux.conf
     ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
 }
@@ -72,5 +57,11 @@ function installFonts() {
 }
 
 function configureTerminal() {
+    echo "==================================="
+    echo "linking terminal config"
+    echo "==================================="    
+
+    cd ~/
+    mkdir -p ~/.conf/kitty
     ln -sf ~/dotfiles/kitty/kitty.conf ~/.conf/kitty/kitty.conf
 }
