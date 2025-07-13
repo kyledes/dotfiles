@@ -63,5 +63,5 @@ function configureTerminal() {
 
     cd ~/
     mkdir -p ~/.conf/kitty
-    ln -sf ~/dotfiles/kitty/kitty.conf ~/.conf/kitty/kitty.conf
+    ln -sf ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 }
