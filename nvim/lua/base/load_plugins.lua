@@ -4,7 +4,9 @@ require("lazy").setup({
   "nvim-lualine/lualine.nvim",
   "mason-org/mason.nvim",
   "mason-org/mason-lspconfig.nvim", 
-  { "neovim/nvim-lspconfig"},
+  "WhoIsSethDaniel/mason-tool-installer.nvim",
+  "neovim/nvim-lspconfig",
+  "saghen/blink.cmp",
   { 
     "folke/lazydev.nvim",
     ft = "lua",

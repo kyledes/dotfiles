@@ -9,6 +9,8 @@ function installSoftware(){
     sudo apt install kitty -y
     sudo apt install shpotify -y
     sudo apt install ripgrep -y
+    # needed for pyright install
+    sudo apt install npm -y 
 }
 
 function cloneDotfiles() {
