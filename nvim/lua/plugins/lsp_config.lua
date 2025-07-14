@@ -101,8 +101,6 @@ local function setMappings(event)
 
   map('<leader>e', vim.diagnostic.open_float, 'op[e]n diagnostic float')
 
-  map('<leader>q', vim.diagnostic.setloclist, 'Open diagnostic [q]uickfix list')
-
   map('<leader>h', vim.lsp.buf.hover, '[h]over')
 
   -- :Daig command for telescope workspace diagnostics

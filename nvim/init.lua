@@ -11,8 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-require("base.options")
-require("base.keymaps")
-require("base.autocommands")
-require("base.load_plugins")
-require("base.plugin_config")
+require("core.options")
+require("core.keymaps")
+require("core.autocommands")
+require("core.load_plugins")
+require("plugins")
