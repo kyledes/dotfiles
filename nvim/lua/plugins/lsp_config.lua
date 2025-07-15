@@ -103,7 +103,7 @@ local function setMappings(event)
 
   map('<leader>h', vim.lsp.buf.hover, '[h]over')
 
-  -- :Daig command for telescope workspace diagnostics
+  -- :Diag command for telescope workspace diagnostics
   vim.api.nvim_create_user_command('Diag', function() require('telescope.builtin').diagnostics() end, {})
 
 end
