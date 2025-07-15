@@ -1,5 +1,7 @@
-require"nvim-treesitter.configs".setup {
-  ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'query', 'vim', 'vimdoc', 'python', 'go' },
+local nvim_treesitter_configs = require 'nvim-treesitter.configs'
+
+nvim_treesitter_configs.setup {
+  ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'query', 'vim', 'vimdoc', 'python', 'go', 'dockerfile', 'cpp' },
   -- Autoinstall languages that are not installed
   auto_install = true,
   highlight = {
@@ -16,3 +18,4 @@ require"nvim-treesitter.configs".setup {
       node_decremental = "grm",
     },
   },
+}

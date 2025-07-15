@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.opt.filetype = "on"
+--vim.opt.filetype = "on"
 vim.g.have_nerd_font = true
 
 --Line numbers

@@ -88,3 +88,13 @@ function configureTerminal() {
     mkdir -p ~/.conf/kitty
     ln -sf ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 }
+
+function configurei3() {
+    echo "==================================="
+    echo "linking i3 config"
+    echo "==================================="
+
+    cd ~/
+    mkdir -p ~/.config/i3
+    ln -sf ~/dotfiles/i3/config ~/.config/i3/config
+}
