@@ -13,6 +13,27 @@ function installSoftware(){
     sudo apt install npm -y 
 }
 
+function installNeovim() {
+    echo "==================================="
+    echo "Installing Neovim"
+    echo "==================================="
+
+    if [ "$#" -eq 0 ]; then
+      version="v0.11.3"
+    else
+      version=$1
+    fi
+    neo_url="https://github.com/neovim/neovim/releases/download/${version}/nvim-linux-x86_64.tar.gz"
+    mkdir ~/nvim
+    cd ~/nvim
+    wget ${neo_url}
+    tar xvzf nvim-linux64.tar.gz -C ~/.local/share/
+    cd ~/.local/bin/
+    ln -sf ~/.local/share/nvim-linux64/bin/nvim nvim
+    #nvim -v | head -n 1 | awk '{print $2}'
+
+}
+
 function cloneDotfiles() {
 
     echo "==================================="

@@ -1,5 +1,6 @@
 require("lazy").setup({
   "ellisonleao/gruvbox.nvim",
+  "tpope/vim-commentary",
   "lewis6991/gitsigns.nvim",
   {
     "nvimtools/none-ls.nvim",
@@ -13,6 +14,7 @@ require("lazy").setup({
     dependencies = { "nvim-tree/nvim-web-devicons" }
   },
   "mason-org/mason.nvim",
+  "ThePrimeagen/vim-be-good",
   { "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     main = "nvim-treesitter.configs",
