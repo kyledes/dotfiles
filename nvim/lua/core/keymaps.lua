@@ -1,5 +1,5 @@
 # semi colon for commands in normal mode
-vim.keymap.set('n', ';', ':')
+--vim.keymap.set('n', ';', ':')
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
