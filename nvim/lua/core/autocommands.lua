@@ -1,9 +1,9 @@
 -- Highlight when yankin) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.hl.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-	desc = 'Highlight when yanking (copying) text',
-	group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
 	callback = function()
 		vim.highlight.on_yank()
 	end,
@@ -24,14 +24,14 @@ local highlight = function()
 		return
 	end
 
-	command = string.format([[match %s /\s\+$/]], 'DiffDelete')
+	command = string.format([[match %s /\s\+$/]], "DiffDelete")
 	vim.cmd(command)
 end
 
-local ws_group = vim.api.nvim_create_augroup('highlight-ws', { clear = true })
+local ws_group = vim.api.nvim_create_augroup("highlight-ws", { clear = true })
 
-vim.api.nvim_create_autocmd({ 'BufWinEnter', 'InsertLeave' }, {
-	desc = 'Highlight trailing white space',
+vim.api.nvim_create_autocmd({ "BufWinEnter", "InsertLeave" }, {
+	desc = "Highlight trailing white space",
 	group = ws_group,
 	pattern = "*",
 	callback = highlight,
@@ -43,4 +43,4 @@ remove_ws = function()
 	vim.fn.setpos(".", save_cursor)
 end
 
-vim.keymap.set('n', '<leader>rs', remove_ws, { desc = '[r]emove trailing white[s]pace' })
+vim.keymap.set("n", "<leader>rs", remove_ws, { desc = "[r]emove trailing white[s]pace" })

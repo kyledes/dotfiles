@@ -17,6 +17,11 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+vim.opt.smartindent = false
+
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 local home_config = vim.fn.expand("~/.config")
@@ -36,12 +41,12 @@ local group = vim.api.nvim_create_augroup("FileTypeOptions", { clear = true })
     vim.opt.shiftwidth = sw
     vim.opt.softtabstop = sts
     vim.opt.expandtab = et
- 
+
  end
- 
- vim.api.nvim_create_autocmd("BufEnter", { 
-   callback = function() setFileType(2, 2, 2, true)end, 
-   group = group, 
+
+ vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function() setFileType(2, 2, 2, true)end,
+   group = group,
    pattern = {".yaml"},
  })
 ]]

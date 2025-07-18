@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function installSoftware(){
+function installSoftware() {
     sudo apt update
     sudo apt install curl -v
     sudo apt install git -y
@@ -19,9 +19,9 @@ function installNeovim() {
     echo "==================================="
 
     if [ "$#" -eq 0 ]; then
-      version="v0.11.3"
+        version="v0.11.3"
     else
-      version=$1
+        version=$1
     fi
     neo_url="https://github.com/neovim/neovim/releases/download/${version}/nvim-linux-x86_64.tar.gz"
     mkdir ~/nvim
@@ -33,6 +33,7 @@ function installNeovim() {
     #nvim -v | head -n 1 | awk '{print $2}'
 
 }
+
 function installBrave() {
 
     echo "==================================="
@@ -47,8 +48,18 @@ function installBrave() {
     sudo apt update
 
     sudo apt install brave-browser
-
 }
+
+function installgo() {
+    echo "==================================="
+    echo "Installing go"
+    echo "==================================="
+
+    # install go
+    #  gofmt
+    #  goimports_reviser
+}
+
 function cloneDotfiles() {
 
     echo "==================================="
@@ -80,7 +91,7 @@ function setupTmux() {
 
     cd ~/
 
-    ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+    ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 }
 
