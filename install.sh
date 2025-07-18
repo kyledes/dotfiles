@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function installSoftware(){
+function installSoftware() {
     sudo apt update
     sudo apt install curl -v
     sudo apt install git -y
@@ -10,7 +10,7 @@ function installSoftware(){
     sudo apt install shpotify -y
     sudo apt install ripgrep -y
     # needed for pyright install
-    sudo apt install npm -y 
+    sudo apt install npm -y
 }
 
 function installNeovim() {
@@ -19,9 +19,9 @@ function installNeovim() {
     echo "==================================="
 
     if [ "$#" -eq 0 ]; then
-      version="v0.11.3"
+        version="v0.11.3"
     else
-      version=$1
+        version=$1
     fi
     neo_url="https://github.com/neovim/neovim/releases/download/${version}/nvim-linux-x86_64.tar.gz"
     mkdir ~/nvim
@@ -33,7 +33,15 @@ function installNeovim() {
     #nvim -v | head -n 1 | awk '{print $2}'
 
 }
+function installgo() {
+    echo "==================================="
+    echo "Installing go"
+    echo "==================================="
 
+    # install go
+    #  gofmt
+    #  goimports_reviser
+}
 function cloneDotfiles() {
 
     echo "==================================="
@@ -49,7 +57,7 @@ function cloneDotfiles() {
 function setupNvim() {
     echo "==================================="
     echo "Setting up neovim"
-    echo "==================================="    
+    echo "==================================="
 
     cd ~/
 
@@ -65,7 +73,7 @@ function setupTmux() {
 
     cd ~/
 
-    ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+    ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 }
 
@@ -82,7 +90,7 @@ function installFonts() {
 function configureTerminal() {
     echo "==================================="
     echo "linking terminal config"
-    echo "==================================="    
+    echo "==================================="
 
     cd ~/
     mkdir -p ~/.conf/kitty
