@@ -10,7 +10,7 @@ function installSoftware(){
     sudo apt install shpotify -y
     sudo apt install ripgrep -y
     # needed for pyright install
-    sudo apt install npm -y 
+    sudo apt install npm -y
 }
 
 function installNeovim() {
@@ -33,7 +33,22 @@ function installNeovim() {
     #nvim -v | head -n 1 | awk '{print $2}'
 
 }
+function installBrave() {
 
+    echo "==================================="
+    echo "Install brave"
+    echo "==================================="
+    sudo apt install curl
+
+    sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+    sudo curl -fsSLo /etc/apt/sources.list.d/brave-browser-release.sources https://brave-browser-apt-release.s3.brave.com/brave-browser.sources
+
+    sudo apt update
+
+    sudo apt install brave-browser
+
+}
 function cloneDotfiles() {
 
     echo "==================================="
@@ -49,7 +64,7 @@ function cloneDotfiles() {
 function setupNvim() {
     echo "==================================="
     echo "Setting up neovim"
-    echo "==================================="    
+    echo "==================================="
 
     cd ~/
 
@@ -82,7 +97,7 @@ function installFonts() {
 function configureTerminal() {
     echo "==================================="
     echo "linking terminal config"
-    echo "==================================="    
+    echo "==================================="
 
     cd ~/
     mkdir -p ~/.conf/kitty
