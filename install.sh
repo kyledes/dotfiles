@@ -28,6 +28,7 @@ function installNeovim() {
     cd ~/nvim
     wget ${neo_url}
     tar xvzf nvim-linux64.tar.gz -C ~/.local/share/
+    mkdir ~/.local/bin
     cd ~/.local/bin/
     ln -sf ~/.local/share/nvim-linux64/bin/nvim nvim
     #nvim -v | head -n 1 | awk '{print $2}'
