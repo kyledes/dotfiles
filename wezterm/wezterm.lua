@@ -13,7 +13,9 @@ config.initial_rows = 28
 -- or, changing the font size and color scheme.
 config.font_size = 12
 --config.color_scheme = "Gruvbox dark, pale (base16)"
-config.color_scheme = "Nord (Gogh)"
-
+--config.color_scheme = "Nord (Gogh)"
+--config.color_scheme = "Dracula"
+config.color_scheme = "Srcery (Gogh)"
+--
 -- Finally, return the configuration to wezterm:
 return config
