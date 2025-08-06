@@ -17,5 +17,15 @@ config.font_size = 12
 --config.color_scheme = "Dracula"
 config.color_scheme = "Srcery (Gogh)"
 --
+
+config.visual_bell = {
+	fade_in_function = "EaseIn",
+	fade_in_duration_ms = 150,
+	fade_out_function = "EaseOut",
+	fade_out_duration_ms = 150,
+}
+config.colors = {
+	visual_bell = "#5B4A1A",
+}
 -- Finally, return the configuration to wezterm:
 return config
