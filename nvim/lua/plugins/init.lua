@@ -8,6 +8,8 @@ require("plugins.treesitter")
 require("plugins.lazydev")
 require("plugins.none-ls")
 require("plugins.project")
+require("plugins.zk")
+require("plugins.render-markdown")
 -- replace this with an ls and a loop?
 
 -- local function splitFile(filename, sep)

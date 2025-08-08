@@ -1,0 +1,3 @@
+rclone mount --daemon --vfs-cache-mode writes pdrive:/notes ./pdrive_notes
+
+fusermount -u /home/kyle/pdrive_notes
