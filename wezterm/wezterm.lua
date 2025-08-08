@@ -10,6 +10,9 @@ local config = wezterm.config_builder()
 config.initial_cols = 120
 config.initial_rows = 28
 
+config.font = wezterm.font("Mononoki Nerd Font")
+
+--config.font = wezterm.font("Mononoki Nerd Font", { weight = "Regular", stretch = "Normal", style = "Normal" })
 -- or, changing the font size and color scheme.
 config.font_size = 12
 --config.color_scheme = "Gruvbox dark, pale (base16)"
