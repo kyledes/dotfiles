@@ -1,7 +1,9 @@
+local zk_home = os.getenv("ZK_NOTEBOOK_DIR")
 require("zk").setup({
 	-- Can be "telescope", "fzf", "fzf_lua", "minipick", "snacks_picker",
 	-- or select" (`vim.ui.select`).
 	picker = "telescope",
+	home = zk_home,
 
 	lsp = {
 		-- `config` is passed to `vim.lsp.start(config)`
@@ -19,5 +21,5 @@ require("zk").setup({
 		},
 	},
 })
-
+-- print("zk notebook directory configured as: ", zk_home)
 require("telescope").load_extension("zk")

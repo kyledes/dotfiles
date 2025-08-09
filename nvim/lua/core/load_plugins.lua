@@ -3,7 +3,7 @@ require("lazy").setup({
 	"tpope/vim-commentary",
 	"lewis6991/gitsigns.nvim",
 	"DrKJeff16/project.nvim",
-	"zk-org/zk-nvim",
+	{ "zk-org/zk-nvim", lazy = false },
 	"MeanderingProgrammer/render-markdown.nvim",
 	{
 		"nvimtools/none-ls.nvim",

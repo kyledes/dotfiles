@@ -1,6 +1,6 @@
 # NOTEBOOK SETTINGS
 [notebook]
-dir = "~/notebook"
+dir = "/home/kyle/zknotes"
 
 # NOTE SETTINGS
 [note]
