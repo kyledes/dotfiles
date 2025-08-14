@@ -1,16 +1,16 @@
 #!/bin/bash
 
+function ubuntuPackages() {
+    software=("curl" "git" "tmux" "kitty" "shpotify" "ripgrep" "stow" "npm")
+}
+
+function coderPackages() {
+    software=("stow" "tmux" "ripgrep" "gcc")
+}
+
 function installSoftware() {
-    sudo apt update
-    sudo apt install curl -v
-    sudo apt install git -y
-    sudo apt install neovim -y
-    sudo apt install tmux -y
-    sudo apt install kitty -y
-    sudo apt install shpotify -y
-    sudo apt install ripgrep -y
-    # needed for pyright install
-    sudo apt install npm -y
+    sudo apt update -y
+    sudo apt install "${software[@]}" -y
 }
 
 function installNeovim() {
@@ -24,15 +24,42 @@ function installNeovim() {
         version=$1
     fi
     neo_url="https://github.com/neovim/neovim/releases/download/${version}/nvim-linux-x86_64.tar.gz"
-    mkdir ~/nvim
+    mkdir -p ~/nvim
     cd ~/nvim
     wget ${neo_url}
-    tar xvzf nvim-linux86_64.tar.gz -C ~/.local/share/
-    mkdir ~/.local/bin
+    tar xvzf nvim-linux-x86_64.tar.gz -C ~/.local/share/
+    mkdir -p ~/.local/bin
     cd ~/.local/bin/
-    ln -sf ~/.local/share/nvim-linux64/bin/nvim nvim
-    #nvim -v | head -n 1 | awk '{print $2}'
+    ln -sf ~/.local/share/nvim-linux-x86_64/bin/nvim nvim
+    if ! grep -qF "# add .local/bin" ~/.bashrc; then
+        echo "# add .local/bin" >>~/.bashrc
+        echo 'export PATH=$PATH:~/.local/bin' >>~/.bashrc
+        source ~/.bashrc
+        installed="$(nvim -v | head -n 1 | awk '{print $2}')"
+        if [[ "$installed" == "$version" ]]; then
+            echo "nvim installed"
+        fi
+    fi
+    cd ~
+    rm -rf ~/nvim
+}
+function coderStow() {
+    stowTargets=("nvim" "tmux")
+}
 
+function linkConfig() {
+
+    if [ "$#" -eq 0 ]; then
+        config="$HOME/dotfiles"
+    else
+        config=$1
+    fi
+
+    cd "${config}"
+    for package in "${stowTargets[@]}"; do
+        mkdir -p "$HOME/.config/${package}"
+        stow "${package}" -t "$HOME/.config/${package}"
+    done
 }
 
 function installBrave() {
@@ -123,3 +150,7 @@ function configurei3() {
 }
 
 installNeovim
+coderPackages
+installSoftware
+coderStow
+linkConfig
