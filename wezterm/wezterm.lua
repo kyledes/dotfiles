@@ -30,5 +30,6 @@ config.visual_bell = {
 config.colors = {
 	visual_bell = "#5B4A1A",
 }
+config.hide_tab_bar_if_only_one_tab = true
 -- Finally, return the configuration to wezterm:
 return config
