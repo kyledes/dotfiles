@@ -49,10 +49,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
 bindsym $mod+\ split h
@@ -170,11 +170,42 @@ mode "$mode_mv_wrk" {
 
 bindsym $mod+m mode "$mode_mv_wrk"
 
+# Gruvbox Dark colors
+set $bg        #282828
+set $fg        #ebdbb2
+set $yellow    #fabd2f
+set $muted_yellow #d79921
+set $orange    #fe8019
+set $red       #cc241d
+set $green     #b8bb26
+set $blue      #458588
+set $purple    #b16286
+set $aqua      #689d6a
+set $gray      #928374
+set $border    #a89984
+# Less bright, muted Gruvbox gray
+set $border_darker #665c54
+
+# Window borders
+client.focused           $muted_yellow $bg $fg $muted_yellow
+client.focused_inactive  $gray   $bg $gray $gray
+client.unfocused         $gray   $bg $gray $gray
+client.urgent            $red    $red $fg $bg
+client.placeholder       $bg     $bg $bg $bg
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
 bar {
-        status_command i3status
+    colors {
+        background $bg
+        statusline $fg
+        separator $gray
+        focused_workspace   $muted_yellow $bg $fg
+        inactive_workspace  $gray   $bg $gray
+        urgent_workspace    $red    $bg $fg
+    }
+    status_command i3status
 }
 
 # Pulse Audio controls

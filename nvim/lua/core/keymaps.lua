@@ -14,7 +14,7 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 vim.keymap.set('n', '<c-d>', '<c-d>zz')
 vim.keymap.set('n', '<c-u>', '<c-u>zz')
 
---omnifunc 
+--omnifunc
 vim.keymap.set('i', '<c-s>', '<c-x><c-o>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [q]uickfix list' })

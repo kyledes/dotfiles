@@ -1,7 +1,7 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
---vim.opt.filetype = "on"
+--vim.opt.filetype = "on"  -- default?
 vim.g.have_nerd_font = true
 
 --Line numbers
@@ -14,7 +14,7 @@ vim.opt.cursorline = true
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
+	vim.o.clipboard = "unnamedplus"
 end)
 
 vim.o.ignorecase = true
@@ -27,11 +27,10 @@ vim.o.showmode = false
 local home_config = vim.fn.expand("~/.config")
 
 vim.opt.undofile = true
-vim.opt.undodir= {home_config .. "/nvim/undodir"}
+vim.opt.undodir = { home_config .. "/nvim/undodir" }
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
-
 
 local group = vim.api.nvim_create_augroup("FileTypeOptions", { clear = true })
 

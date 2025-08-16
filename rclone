@@ -1,3 +1,9 @@
 rclone mount --daemon --vfs-cache-mode writes pdrive:/notes ./pdrive_notes
 
 fusermount -u /home/kyle/pdrive_notes
+
+
+
+rclone copy ~/zknotes pdrive:zknotes
+
+rclone sync pdrive:zknotes ~/zknotes --backup-dir ~/bak_zknotes
