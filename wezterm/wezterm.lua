@@ -18,8 +18,9 @@ config.font_size = 12
 --config.color_scheme = "Gruvbox dark, pale (base16)"
 --config.color_scheme = "Nord (Gogh)"
 --config.color_scheme = "Dracula"
-config.color_scheme = "Srcery (Gogh)"
---
+--config.color_scheme = "Sorcery (Gogh)"
+config.color_scheme = "Warm Neon (Gogh)"
+--config.color_scheme = "Gruvbox Material Dark"
 
 config.visual_bell = {
 	fade_in_function = "EaseIn",
@@ -27,8 +28,22 @@ config.visual_bell = {
 	fade_out_function = "EaseOut",
 	fade_out_duration_ms = 150,
 }
+
 config.colors = {
 	visual_bell = "#5B4A1A",
+	background = "#221912", -- dark brown, replace with your preferred hex
+}
+
+config.ssh_domains = {
+	{
+		-- This name identifies the domain
+		name = "dev",
+		-- The hostname or address to connect to. Will be used to match settings
+		-- from your ssh config file
+		remote_address = "dev.desmarais.family",
+		-- The username to use on the remote host
+		username = "kyle",
+	},
 }
 -- Finally, return the configuration to wezterm:
 return config
