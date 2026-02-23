@@ -1,8 +1,10 @@
 #!/bin/bash
 source "$HOME/dotfiles/install_base.sh"
 
-installNeovim
-coderPackages
-installSoftware
-coderStow
-linkConfig
+#installNeovim
+#configureWezterm
+configureSway
+#coderPackages
+#installSoftware
+#coderStow
+#linkConfig

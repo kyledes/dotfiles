@@ -19,11 +19,11 @@ function installNeovim() {
     echo "==================================="
 
     if [ "$#" -eq 0 ]; then
-        version="v0.11.3"
+        version="latest"
     else
         version=$1
     fi
-    neo_url="https://github.com/neovim/neovim/releases/download/${version}/nvim-linux-x86_64.tar.gz"
+    neo_url="https://github.com/neovim/neovim/releases/${version}/download/nvim-linux-x86_64.tar.gz"
     mkdir -p ~/nvim
     cd ~/nvim
     wget ${neo_url}
@@ -130,7 +130,7 @@ function installFonts() {
     sh -c "./install_font.sh"
 }
 
-function configureTerminal() {
+function configureKitty() {
     echo "==================================="
     echo "linking terminal config"
     echo "==================================="
@@ -140,6 +140,14 @@ function configureTerminal() {
     ln -sf ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 }
 
+function configureWezterm() {
+    echo "==================================="
+    echo "linking terminal config"
+    echo "==================================="
+
+    cd ~/
+    ln -sf ~/dotfiles/wezterm ~/.config/wezterm
+}
 function configurei3() {
     echo "==================================="
     echo "linking i3 config"
@@ -150,8 +158,17 @@ function configurei3() {
     ln -sf ~/dotfiles/i3/config ~/.config/i3/config
 }
 
-installNeovim
-coderPackages
-installSoftware
-coderStow
-linkConfig
+function configureSway() {
+    echo "==================================="
+    echo "linking i3 config"
+    echo "==================================="
+
+    cd ~/
+    mkdir -p ~/.config/sway
+    ln -sf ~/dotfiles/sway/config ~/.config/sway/config
+}
+#installNeovim
+#coderPackages
+#installSoftware
+#coderStow
+#linkConfig
